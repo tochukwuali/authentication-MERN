@@ -7,7 +7,7 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 //Register User
 export const registerUser = (userData, history) => dispatch => { //what does this mean
     axios
-      .post("http://localhost:5000/api/v1/users/register", userData)
+      .post("/api/v1/users/register", userData)
       .then(res => history.push("/login")) //redirect to login after successful login
       .catch(err =>
         dispatch({
@@ -20,7 +20,7 @@ export const registerUser = (userData, history) => dispatch => { //what does thi
 //Login User
 export const loginUser = userData => dispatch => {
     axios
-      .post("http://localhost:5000/api/v1/users/register", userData)
+      .post("/api/v1/users/login", userData)
       .then(res => {
         //Save to Local storage
 
